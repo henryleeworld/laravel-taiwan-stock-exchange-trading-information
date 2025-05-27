@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Services;
+namespace App\Http\Integrations\TaiwanStockExchange;
 
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 
-class TaiwanStockExchangeService
+final readonly class TaiwanStockExchangeConnector
 {
 
-    private $httpClient;
+    private Client $httpClient;
 
     /**
      * Instantiate a new TaiwanStockExchangeService instance.

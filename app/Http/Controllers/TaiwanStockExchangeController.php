@@ -14,7 +14,10 @@ class TaiwanStockExchangeController extends Controller
         $this->taiwanStockExchangeConnector = $taiwanStockExchangeConnector;
     }
 
-    public function show() 
+    /**
+     * Display the specified resource.
+     */
+    public function show()
     {
         $response = json_decode($this->taiwanStockExchangeConnector->getStockInfo(['tse_1101.tw', 'tse_1102.tw']))->msgArray;
         foreach ($response as $item) {
@@ -34,6 +37,5 @@ class TaiwanStockExchangeController extends Controller
             echo __('Last trading time:') . $item->t . PHP_EOL;
             echo '==============' . PHP_EOL;
         }
-        // echo $response;
     }
 }
